@@ -99,6 +99,7 @@ module main(clock, power_btn, red, green, input_num, SEG, AN, LED, change, err, 
             full = 0;
             rst = 0;
             error = 0;
+            ones <= 0;
         end
     end
 
