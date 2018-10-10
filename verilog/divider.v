@@ -2,10 +2,10 @@
 
 module divider(click, clk_N);
 
-    input click; // 原始信号
-    output reg clk_N; // 输出的信�?
-    parameter N = 100_000_000; // 2s�?个脉冲，周期0.5Hz
-    reg [31:0] counter;
+    input click; // ???????
+    output reg clk_N; // ?????
+    parameter N = 100_000_000; // ????100MHz?2s??????????2s?N???????
+    reg [31:0] counter; // ?????
 
     initial begin
         counter <= 0;
