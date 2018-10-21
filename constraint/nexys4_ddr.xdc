@@ -70,6 +70,11 @@ set_property IOSTANDARD LVCMOS33 [get_ports clock]
 # power button
 set_property PACKAGE_PIN P17 [get_ports power_btn]
 set_property IOSTANDARD LVCMOS33 [get_ports power_btn]
+
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets next_btn_IBUF]
+
+set_property PACKAGE_PIN M17 [get_ports next_btn]
+set_property IOSTANDARD LVCMOS33 [get_ports next_btn]
 # power light
 set_property PACKAGE_PIN R11 [get_ports green]
 set_property IOSTANDARD LVCMOS33 [get_ports green]
@@ -86,3 +91,9 @@ set_property IOSTANDARD LVCMOS33 [get_ports check]
 
 set_property PACKAGE_PIN V14 [get_ports err]
 set_property IOSTANDARD LVCMOS33 [get_ports err]
+
+set_property PACKAGE_PIN M16 [get_ports next_on]
+set_property IOSTANDARD LVCMOS33 [get_ports next_on]
+
+set_property PACKAGE_PIN U17 [get_ports full]
+set_property IOSTANDARD LVCMOS33 [get_ports full]

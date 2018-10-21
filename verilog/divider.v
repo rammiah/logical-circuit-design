@@ -13,7 +13,7 @@ module divider(click, clk_N);
     end
 
     always@(posedge click)begin
-        counter <= counter + 1;
+        counter = counter + 1;
         if (counter >= N) begin
             counter <= 0;
             clk_N <= ~clk_N;

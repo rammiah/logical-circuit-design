@@ -1,12 +1,13 @@
 `timescale 1ns / 1ps
 
-module display(all, one, SEG, AN, clk);
+module display(all, one, SEG, AN, clk, power);
     // 显示模块
     input clk; // 显示脉冲
     input [9:0]all; // 输入的3位的数字
     input [4:0]one; // 2位数字
     output [7:0]SEG; // 数码管
     output reg[7:0]AN; // 控制显示的数码管
+    input power;
 
     parameter NONE = 8'b11111111; // 空信号
 
@@ -38,15 +39,19 @@ module display(all, one, SEG, AN, clk);
     end
 
     always @(posedge clk) begin
-        case (control)
-        // show同理
-        0:show <= Seg_RAM[0];
-        1:show <= Seg_RAM[1];
-        4:show <= Seg_RAM[4];
-        5:show <= Seg_RAM[5];
-        6:show <= Seg_RAM[6];
-        default: show <= 4'b0000;
-        endcase
+        if (power) begin
+            case (control)
+            // show同理
+            0:show <= Seg_RAM[0];
+            1:show <= Seg_RAM[1];
+            4:show <= Seg_RAM[4];
+            5:show <= Seg_RAM[5];
+            6:show <= Seg_RAM[6];
+            default: show <= 4'b0000;
+            endcase
+        end else begin
+            show <= 4'b1111;// 不显示内容
+        end
     end
 
 

@@ -9,7 +9,7 @@ module adder(add, clk_N, rst, counter);
     output reg[N:0] counter; // 内部数据
 
     initial begin
-        counter <= 0;
+        counter = 0;
     end
     // 下降沿清零和+1
     always@(negedge clk_N, negedge rst) begin
